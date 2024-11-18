@@ -1,0 +1,17 @@
+<section class="OurBestSellers Section">
+    <h2 class="OurBestSeller--Title">Our Bestsellers</h2>
+   
+
+    <div class="product-container" id="products">
+        <div *ngFor="let product of products" class="product">
+          <a [routerLink]="['/product-detail', product.id]">
+            <img [src]="product.image" [alt]="product.name">
+          </a>
+          <p><a [routerLink]="['/product-detail', product.id]">{{ product.name }}</a></p>
+          <p class="price">{{'$' + product.price}}</p>
+          <button class="add-to-cart" (click)="addToCart(product.id)">Add to cart</button>
+        </div>
+      </div>
+</section>
+
+
